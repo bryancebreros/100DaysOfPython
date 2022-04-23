@@ -1,8 +1,9 @@
+import os
 import smtplib
 import datetime as dt
 
-my_email = "sandanielspoti@gmail.com"
-password = "wSureraRe39"
+my_email = os.environ["EMAIL"]
+password = os.environ["email_pass"]
 now = dt.datetime.now()
 if now.weekday() == 5:
     with smtplib.SMTP("smtp.gmail.com") as connection:
